@@ -1,6 +1,6 @@
 import React from "react"
 import { Header } from "./blocks/header"
-import CookieBanner from "./CookieBanner"
+import { CookieBanner } from "./CookieBanner/CookieBanner"
 
 export const Layout = ({ children }) => (
   <>

@@ -18,7 +18,7 @@ interface ScrollProps {
   scrollPerc?: number
 }
 
-function CookieBanner({ content, buttonText, debug }: CookieBannerProps) {
+function CookieBannerApp({ content, buttonText, debug }: CookieBannerProps) {
   const [isVisible, setVisible] = useState(false)
   const { isOpen, onOpen, onClose } = useDisclosure()
   const { pos, scrollPerc }: ScrollProps = ScrollProgress()
@@ -88,7 +88,5 @@ function CookieBanner({ content, buttonText, debug }: CookieBannerProps) {
   )
 }
 
-const CookieBannerApp: React.FC<CookieBannerProps> = ({ content, buttonText, debug }) =>
-  !Cookies.get(cookieName) || debug ? <CookieBanner content={content} buttonText={buttonText} /> : null
-
-export default CookieBannerApp
+export const CookieBanner: React.FC<CookieBannerProps> = ({ content, buttonText, debug }) =>
+  !Cookies.get(cookieName) || debug ? <CookieBannerApp content={content} buttonText={buttonText} /> : null
