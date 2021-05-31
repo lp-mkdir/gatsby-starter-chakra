@@ -37,7 +37,6 @@
     "gatsby-plugin-react-helmet": "^4.3.0",
     "gatsby-plugin-sharp": "^3.3.1",
     "gatsby-plugin-sitemap": "^3.3.0",
-    "gatsby-plugin-typography": "^3.3.0",
     "gatsby-source-filesystem": "^3.3.0",
     "gatsby-transformer-sharp": "^3.3.0",
     "js-cookie": "^2.2.1",
