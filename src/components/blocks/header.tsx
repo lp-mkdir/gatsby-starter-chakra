@@ -1,5 +1,6 @@
 import * as React from "react"
 import { Flex } from "@chakra-ui/react"
+import Headroom from "react-headroom"
 import { Link } from "../link"
 import { Navigation } from "./navigation"
 import { FullWidthContainer } from "./full-width-container"
@@ -18,12 +19,12 @@ const Logo: React.FC = () => (
 )
 
 export const Header: React.FC = () => (
-  <>
-    <FullWidthContainer variant="navigation" height="navigationHeight">
+  <FullWidthContainer variant="navigation" height="navigationHeight">
+    <Headroom pin>
       <Flex as="header" alignItems="center" justifyContent="space-between" py="13px">
         <Logo />
         <Navigation />
       </Flex>
-    </FullWidthContainer>
-  </>
+    </Headroom>
+  </FullWidthContainer>
 )

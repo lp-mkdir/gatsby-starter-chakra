@@ -4,7 +4,7 @@ import { transparentize } from "@chakra-ui/theme-tools"
 const colorPalette = {
   colors: {
     black: `#38393D`,
-    blackOnyx: `#444545`, // blackish
+    blackOnyx: `#444545`,
     white: `#fff`,
     rose: {
       50: `#fff1f2`,
@@ -279,6 +279,7 @@ const navBgTransparency = 0.85
 const colors = {
   brand: {
     primaryAlpha: transparentize(`orange.400`, 0.25)(colorPalette),
+    blackAlpha: transparentize(`black`, 0.8)(colorPalette),
     primaryBg: colorPalette.colors.orange[`600`],
     primaryHover: colorPalette.colors.orange[`700`],
     text: colorPalette.colors.blackOnyx,

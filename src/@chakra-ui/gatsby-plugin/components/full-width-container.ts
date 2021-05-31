@@ -30,8 +30,8 @@ const FullWidthContainer = {
     },
     navigation: (props) => ({
       outer: {
-        bg: props.theme.colors.brand.bgAlpha,
-        backdropFilter: `blur(8px)`,
+        // bg: props.theme.colors.brand.bgAlpha,
+        // backdropFilter: `blur(8px)`,
         position: `fixed`,
         display: `flex`,
         zIndex: `sticky`,
@@ -39,6 +39,8 @@ const FullWidthContainer = {
       inner: {
         header: {
           color: props.theme.colors.white,
+          maxWidth: `800px`,
+          margin: `0 auto`,
         },
       },
     }),

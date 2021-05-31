@@ -1,4 +1,5 @@
 import { ThemeOverride } from "@chakra-ui/react"
+import { headroom } from "./custom/headroom"
 
 const styles: ThemeOverride["styles"] = {
   global: (props) => ({
@@ -6,7 +7,7 @@ const styles: ThemeOverride["styles"] = {
       bg: props.theme.colors.brand.bg,
       color: props.theme.colors.brand.text,
       scrollbarWidth: `thin`,
-      scrollbarColor: `${props.theme.colors.gray[`100`]} ${props.theme.colors.gray[`600`]}`,
+      scrollbarColor: `${props.theme.colors.blue[`100`]} ${props.theme.colors.blue[`600`]}`,
       "::-webkit-scrollbar": {
         width: `14px`,
       },
@@ -14,11 +15,11 @@ const styles: ThemeOverride["styles"] = {
         backgroundColor: `${props.theme.colors.gray[`200`]} ${props.theme.colors.gray[`700`]}`,
       },
       "::-webkit-scrollbar-thumb": {
-        backgroundColor: `${props.theme.colors.gray[`400`]} ${props.theme.colors.gray[`400`]}`,
+        backgroundColor: `${props.theme.colors.coolGray[`500`]}`,
         borderRadius: `8px`,
         borderWidth: `3px`,
         borderStyle: `solid`,
-        borderColor: `${props.theme.colors.gray[`200`]} ${props.theme.colors.gray[`700`]}`,
+        borderColor: `${props.theme.colors.gray[`50`]} ${props.theme.colors.gray[`100`]}`,
       },
       nav: {
         ul: {
@@ -34,6 +35,7 @@ const styles: ThemeOverride["styles"] = {
         clip: `auto`,
       },
     },
+    ...headroom,
   }),
 }
 
