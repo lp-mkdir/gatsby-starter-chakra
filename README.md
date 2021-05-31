@@ -15,8 +15,8 @@
 - SEO (sitemap, schema.org data, OpenGraph & Twitter tags)
 
 ## Tech Stack
+- TypeScript 
 - Chakra UI for styling
 - ESLint & Prettier for linting
 - Cypress.io for E2E-testing (TODO)
 - CircleCI (TODO)
-- TypeScript (TODO)
