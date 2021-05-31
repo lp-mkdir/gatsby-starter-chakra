@@ -20,7 +20,7 @@ const Logo: React.FC = () => (
 
 export const Header: React.FC = () => (
   <FullWidthContainer variant="navigation" height="navigationHeight">
-    <Headroom pin>
+    <Headroom>
       <Flex as="header" alignItems="center" justifyContent="space-between" py="13px">
         <Logo />
         <Navigation />
