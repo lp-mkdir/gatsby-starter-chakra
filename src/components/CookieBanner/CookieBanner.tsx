@@ -1,16 +1,27 @@
 import React, { useState, useEffect } from "react"
 import Cookies from "js-cookie"
 import { Button, Stack, Flex, Spacer, Text, Center, useDisclosure, Progress, Box } from "@chakra-ui/react"
-import ScrollProgress from "utils/ScrollProgress"
+import { ScrollProgress } from "../../utils/ScrollProgress"
 import OptModal from "./optModal"
 import config from "../../../config/website"
 
 const cookieName = `gatsby-gdpr-google-analytics`
 
-function CookieBanner({ content, buttonText, debug }) {
+export type CookieBannerProps = {
+  content: string
+  buttonText: string
+  debug?: boolean
+}
+
+interface ScrollProps {
+  pos: number
+  scrollPerc?: number
+}
+
+function CookieBanner({ content, buttonText, debug }: CookieBannerProps) {
   const [isVisible, setVisible] = useState(false)
   const { isOpen, onOpen, onClose } = useDisclosure()
-  const { pos, scrollPerc } = ScrollProgress()
+  const { pos, scrollPerc }: ScrollProps = ScrollProgress()
 
   function disableTrack() {
     Cookies.set(cookieName, false)
@@ -31,7 +42,12 @@ function CookieBanner({ content, buttonText, debug }) {
       setVisible(true)
     }
     // After 70% of scroll && GDPR is false it will automatically accept the cookies
-    if (scrollPerc > 70 && Cookies.get(cookieName) === undefined && !Cookies.get(cookieName)) {
+    if (
+      scrollPerc !== undefined && // TS: check if var comes undefined
+      scrollPerc > 70 &&
+      Cookies.get(cookieName) === undefined &&
+      !Cookies.get(cookieName)
+    ) {
       setVisible(false)
       Cookies.set(cookieName, true)
     }
@@ -72,7 +88,7 @@ function CookieBanner({ content, buttonText, debug }) {
   )
 }
 
-const CookieBannerApp = ({ content, buttonText, debug }) =>
+const CookieBannerApp: React.FC<CookieBannerProps> = ({ content, buttonText, debug }) =>
   !Cookies.get(cookieName) || debug ? <CookieBanner content={content} buttonText={buttonText} /> : null
 
 export default CookieBannerApp

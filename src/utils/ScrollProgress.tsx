@@ -1,8 +1,8 @@
-import { useState, useEffect, useRef } from 'react'
+import { useState, useEffect, useRef } from "react"
 
-export default function ScrollProgress() {
+export const ScrollProgress = () => {
   const [pos, setPos] = useState(0)
-  const scrollPerc = useRef()
+  const scrollPerc = useRef<number>()
 
   function handleScroll() {
     // get actual "Y" axis position and then sum the actual browser height (from client)
@@ -10,7 +10,7 @@ export default function ScrollProgress() {
   }
 
   useEffect(() => {
-    window.addEventListener('scroll', handleScroll)
+    window.addEventListener(`scroll`, handleScroll)
     // Calc total scroll height of document
     const initScrollHeight = Math.max(
       document.body.scrollHeight,
