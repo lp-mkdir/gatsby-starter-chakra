@@ -1,11 +1,11 @@
-import React, { useState, useEffect } from 'react'
-import Cookies from 'js-cookie'
-import { Button, Stack, Flex, Spacer, Text, Center, useDisclosure, Progress, Box } from '@chakra-ui/react'
-import ScrollProgress from 'utils/ScrollProgress'
-import OptModal from './optModal'
-import config from '../../../config/website'
+import React, { useState, useEffect } from "react"
+import Cookies from "js-cookie"
+import { Button, Stack, Flex, Spacer, Text, Center, useDisclosure, Progress, Box } from "@chakra-ui/react"
+import ScrollProgress from "utils/ScrollProgress"
+import OptModal from "./optModal"
+import config from "../../../config/website"
 
-const cookieName = 'gatsby-gdpr-google-analytics'
+const cookieName = `gatsby-gdpr-google-analytics`
 
 function CookieBanner({ content, buttonText, debug }) {
   const [isVisible, setVisible] = useState(false)

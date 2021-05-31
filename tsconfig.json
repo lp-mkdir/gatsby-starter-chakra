@@ -10,7 +10,6 @@
     "skipLibCheck": true,
     "esModuleInterop": true,
     "noImplicitAny": false,
-    "react/prop-types": false,
   },
   "include": ["./src/**/*"]
 }

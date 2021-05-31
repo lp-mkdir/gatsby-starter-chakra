@@ -1,3 +1,3 @@
-import CookieBannerApp from './CookieBanner'
+import CookieBannerApp from "./CookieBanner"
 
 export default CookieBannerApp
